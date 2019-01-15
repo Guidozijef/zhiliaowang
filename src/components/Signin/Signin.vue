@@ -1,9 +1,9 @@
 <template>
-  <div class="register-container" v-show="visible_Register">
-    <div class="register-box">
+  <div class="signin-container" v-show="visible_Signin">
+    <div class="signin-box">
       <div class="title">
         <h1>注册</h1>
-        <span class="exit" @click="hideRegister()">×</span>
+        <span class="exit" @click="hideSignin()">×</span>
       </div>
       <p class="control has-icon">
         <input class="input is-medium" type="user" placeholder="请输入用户名" style="fontSize:14px">
@@ -54,27 +54,27 @@ export default {
     return {};
   },
   props: {
-    visible_Register: {
+    visible_Signin: {
       type: Boolean
     }
   },
   methods: {
-    hideRegister() {
-      // 下面的语句配合开头写的 .sync 就会更新父组件中的 visible_Register 变量
-      this.$emit("update:visible_Register", false);
+    hideSignin() {
+      // 下面的语句配合开头写的 .sync 就会更新父组件中的 visible_Signin 变量
+      this.$emit("update:visible_Signin", false);
     },
     goLogin() {
       // 在注册里面点击登录后：
-      // 1.调用 hideRegister() 方法关闭注册页，
+      // 1.调用 hideSignin() 方法关闭注册页，
       // 2.然后修改 headers父组件 中控制登录页的值，使其显示登录页
-      this.hideRegister();
+      this.hideSignin();
       this.$emit("update:visible_Login", true);
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-.register-container {
+.signin-container {
   // overflow: hidden;
   // width: 100%;
   // height: 625px;
@@ -90,7 +90,7 @@ export default {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 500;
-  .register-box {
+  .signin-box {
     position: relative;
     padding: 24px;
     width: 320px;

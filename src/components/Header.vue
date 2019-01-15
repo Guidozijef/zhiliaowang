@@ -10,7 +10,7 @@
           <!-- <router-link :to="'/login/'">登录</router-link> -->
           <a @click="showLogin()">登录</a>
           <span>|</span>
-          <a @click="showRegister()">注册</a>
+          <a @click="showSignin()">注册</a>
           <span>|</span>
           <a href="#">关注商城</a>
           <b></b>
@@ -48,32 +48,32 @@
       </p>
     </div>
     <!-- 登录里面需要点击注册，注册里面要登录，所以要传两个参数 -->
-    <login :visible_Login.sync="visible_Login" :visible_Register.sync="visible_Register"></login>
-    <register :visible_Register.sync="visible_Register" :visible_Login.sync="visible_Login"></register>
+    <login :visible_Login.sync="visible_Login" :visible_Signin.sync="visible_Signin"></login>
+    <signin :visible_Signin.sync="visible_Signin" :visible_Login.sync="visible_Login"></signin>
   </div>
 </template>
 <script>
 import login from "./Login/Login";
-import register from "./Register/Register";
+import signin from "./Signin/Signin";
 export default {
   data() {
     return {
       label: "",
       message: true,
       visible_Login: false,
-      visible_Register: false
+      visible_Signin: false
     };
   },
   components: {
     login,
-    register
+    signin
   },
   methods: {
     showLogin() {
       this.visible_Login = true;
     },
-    showRegister() {
-      this.visible_Register = true;
+    showSignin() {
+      this.visible_Signin = true;
     }
   }
 };

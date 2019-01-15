@@ -21,7 +21,7 @@
       <a class="button is-primary is-medium">登录</a>
       <div class="prompt-box">
         没有账号？
-        <span class="clickable" @click="goRegister()">注册</span>
+        <span class="clickable" @click="goSignin()">注册</span>
         <a href="javascript:;" class="right clickable">忘记密码</a>
       </div>
       <div class="oauth-box">
@@ -55,7 +55,7 @@ export default {
     visible_Login: {
       type: Boolean
     },
-    visible_Register: {
+    visible_Signin: {
       type: Boolean
     }
   },
@@ -64,12 +64,12 @@ export default {
       // 下面的语句配合开头写的 .sync 就会更新父组件中的 visible_Login 变量
       this.$emit("update:visible_Login", false);
     },
-    goRegister() {
+    goSignin() {
       // 在登录里面点击注册后：
       // 1.调用 hideLogin() 方法关闭登录页，
       // 2.然后修改 headers父组件 中控制注册页的值，使其显示注册页
       this.hideLogin();
-      this.$emit("update:visible_Register", true);
+      this.$emit("update:visible_Signin", true);
     }
   }
 };

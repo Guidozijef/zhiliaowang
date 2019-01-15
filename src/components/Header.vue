@@ -37,8 +37,14 @@
             <option>文档</option>
           </select>
         </span>
-        <input class="input is-large" type="text" placeholder="Search" style="width:500px">
-        <router-link to="/search/:id" class="button is-primary is-large">搜索</router-link>
+        <input
+          class="input is-large"
+          type="text"
+          placeholder="Search"
+          v-model="label"
+          style="width:500px"
+        >
+        <router-link :to="'/search/' + label" class="button is-primary is-large">搜索</router-link>
       </p>
     </div>
     <!-- 登录里面需要点击注册，注册里面要登录，所以要传两个参数 -->
@@ -52,6 +58,7 @@ import register from "./Register/Register";
 export default {
   data() {
     return {
+      label: "",
       message: true,
       visible_Login: false,
       visible_Register: false

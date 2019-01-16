@@ -44,7 +44,8 @@
           v-model="label"
           style="width:500px"
         >
-        <router-link :to="'/search/' + label" class="button is-primary is-large">搜索</router-link>
+        <button @click="goSerch(label)" class="button is-primary is-large">搜索</button>
+        <!-- <router-link :to="'/search/' + label" class="button is-primary is-large">搜索</router-link> -->
       </p>
     </div>
     <!-- 登录里面需要点击注册，注册里面要登录，所以要传两个参数 -->
@@ -74,6 +75,12 @@ export default {
     },
     showSignin() {
       this.visible_Signin = true;
+    },
+    goSerch(id) {
+      if (id != "") {
+        this.$router.push({ name: "search", params: { id } });
+      }
+      this.label = "";
     }
   }
 };

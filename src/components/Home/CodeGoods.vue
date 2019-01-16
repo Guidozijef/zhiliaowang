@@ -2,20 +2,19 @@
   <div class="goods-container">
     <div class="IT-container">
       <h2 class="top-title">网页源码</h2>
-      <a href="#">
+      <router-link :to="'/List/网页源码'">
         <span class="more">更多&gt;&gt;</span>
-      </a>
+      </router-link>
       <ul class="top-sub">
         <li
-          v-for="sub in subs"
-          :key="sub.price"
+          v-for="(sub,index) in subs"
+          :key="sub.index"
           @mouseover="changeActive($event)"
           @mouseout="removeActive($event)"
+          @click="goGoodsInfo(sub.title)"
         >
           <div class="goods-img">
-            <a :href="sub.sourceUrl">
-              <img :src="sub.imgUrl" alt width="200px" height="200px">
-            </a>
+            <img :src="sub.imgUrl" alt width="200px" height="200px">
           </div>
           <h3 class="goods-title">
             <a herf="#">{{sub.title}}</a>
@@ -47,7 +46,7 @@ export default {
           imgUrl: "http://i3.mifile.cn/a4/T1rQAgB7Av1RXrhCrK.jpg",
           title: "小米路由器3",
           desc: "四天线设计，更安全更稳定",
-          price: "149",
+          price: "159",
           discountType: "free",
           discount: "免邮费"
         },
@@ -74,7 +73,7 @@ export default {
           imgUrl: "//i3.mifile.cn/a4/T1zTK_Bbhv1RXrhCrK.jpg",
           title: "小米净水器",
           desc: "厨下式 RO反渗透直出纯净水，包邮包安装",
-          price: "1999"
+          price: "199"
         },
         {
           sourceUrl: "//www.mi.com/ihealth/ ",
@@ -88,7 +87,7 @@ export default {
           imgUrl: "http://i1.mifile.cn/a1/T1OVC_ByY_1RXrhCrK!220x220.jpg",
           title: "米家压力IH电饭煲",
           desc: "智能烹饪，3L 容量",
-          price: "999"
+          price: "99"
         },
         {
           sourceUrl: "//item.mi.com/1163200015.html",
@@ -105,7 +104,7 @@ export default {
           imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
           title: "小米手环 光感版",
           desc: "实时监测心率，科学运动",
-          price: "99"
+          price: "499"
         },
         {
           sourceUrl: "//list.mi.com/accessories/tag?id=guangganban",
@@ -132,6 +131,10 @@ export default {
     // 鼠标移入移除active类
     removeActive($event) {
       $event.currentTarget.className = "";
+    },
+    // 点击进入商品详情页
+    goGoodsInfo(id) {
+      this.$router.push({ name: "itgoodsinfo", params: { id } });
     }
   }
 };

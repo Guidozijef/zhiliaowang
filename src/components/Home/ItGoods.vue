@@ -2,9 +2,9 @@
   <div class="goods-container">
     <div class="IT-container">
       <h2 class="top-title">IT行业</h2>
-      <a href="#">
+      <router-link :to="'/List/IT行业'">
         <span class="more">更多&gt;&gt;</span>
-      </a>
+      </router-link>
       <ul class="top-sub">
         <li
           v-for="sub in subs"
@@ -46,7 +46,7 @@ export default {
           imgUrl: "http://i3.mifile.cn/a4/T1rQAgB7Av1RXrhCrK.jpg",
           title: "小米路由器3",
           desc: "四天线设计，更安全更稳定",
-          price: "149",
+          price: "1249",
           discountType: "free",
           discount: "免邮费"
         },
@@ -80,21 +80,21 @@ export default {
           imgUrl: "http://i1.mifile.cn/a1/T17FCQByWv1RXrhCrK!220x220.jpg",
           title: "iHealth智能血压计（蓝牙版）",
           desc: "送给父母的健康礼物 测血压仅需1步",
-          price: "199"
+          price: "1499"
         },
         {
           sourceUrl: "//www.mi.com/dianfanbao/",
           imgUrl: "http://i1.mifile.cn/a1/T1OVC_ByY_1RXrhCrK!220x220.jpg",
           title: "米家压力IH电饭煲",
           desc: "智能烹饪，3L 容量",
-          price: "999"
+          price: "9909"
         },
         {
           sourceUrl: "//item.mi.com/1163200015.html",
           imgUrl: "http://i1.mifile.cn/a1/pms_1470730028.12443689!220x220.jpg",
           title: "全系智能套装限时款",
           desc: "开启你的智能生活",
-          price: "292",
+          price: "2912",
           oldPrice: "325",
           discountType: "discount",
           discount: "享九折"
@@ -104,21 +104,21 @@ export default {
           imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
           title: "小米手环 光感版",
           desc: "实时监测心率，科学运动",
-          price: "99"
+          price: "969"
         },
         {
           sourceUrl: "//list.mi.com/accessories/tag?id=guangganban",
           imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
           title: "小米手环 光感版",
           desc: "实时监测心率，科学运动",
-          price: "99"
+          price: "599"
         },
         {
           sourceUrl: "//list.mi.com/accessories/tag?id=guangganban",
           imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
           title: "小米手环 光感版",
           desc: "实时监测心率，科学运动",
-          price: "99"
+          price: "949"
         }
       ]
     };

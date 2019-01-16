@@ -12,7 +12,7 @@ export default new Router({
 		{ path: '/', redirect: '/home' }, // 定义首页的链接
 		{ path: '/home', name: 'Home', component: Home },
 		{ path: '/itgoodsinfo/:id', name: 'itgoodsinfo', component: GoodsInfo },
-		{ path: '/search/:id', component: Search },
+		{ path: '/search/:id', component: Search, name: 'search' },
 		{ path: '/List/:id', component: Search },
 		{ path: '/login/', component: Login }
 	]

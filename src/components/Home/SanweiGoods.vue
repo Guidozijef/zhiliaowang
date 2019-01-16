@@ -2,20 +2,19 @@
   <div class="goods-container">
     <div class="IT-container">
       <h2 class="top-title">三维逆向</h2>
-      <a href="#">
+      <router-link :to="'/List/三维逆向'">
         <span class="more">更多&gt;&gt;</span>
-      </a>
+      </router-link>
       <ul class="top-sub">
         <li
           v-for="sub in subs"
           :key="sub.price"
           @mouseover="changeActive($event)"
           @mouseout="removeActive($event)"
+          @click="goGoodsInfo(sub.title)"
         >
           <div class="goods-img">
-            <a :href="sub.sourceUrl">
-              <img :src="sub.imgUrl" alt width="200px" height="200px">
-            </a>
+            <img :src="sub.imgUrl" alt width="200px" height="200px">
           </div>
           <h3 class="goods-title">
             <a herf="#">{{sub.title}}</a>
@@ -47,7 +46,7 @@ export default {
           imgUrl: "http://i3.mifile.cn/a4/T1rQAgB7Av1RXrhCrK.jpg",
           title: "小米路由器3",
           desc: "四天线设计，更安全更稳定",
-          price: "149",
+          price: "14.9",
           discountType: "free",
           discount: "免邮费"
         },
@@ -56,7 +55,7 @@ export default {
           imgUrl: "http://i3.mifile.cn/a4/2b69b930-a2fd-4d09-a46a-8690cb79f764",
           title: "电助力折叠自行车",
           desc: "力矩传感电助力，让城市出行轻松有趣",
-          price: "149",
+          price: "1495",
           discountType: "new",
           discount: "新品"
         },
@@ -65,7 +64,7 @@ export default {
           imgUrl: "http://i1.mifile.cn/a1/pms_1464615180.86261317!220x220.jpg",
           title: "米兔智能故事机",
           desc: "能说会道，宝宝的好玩伴",
-          price: "199",
+          price: "19955",
           discountType: "new",
           discount: "新品"
         },
@@ -74,28 +73,28 @@ export default {
           imgUrl: "//i3.mifile.cn/a4/T1zTK_Bbhv1RXrhCrK.jpg",
           title: "小米净水器",
           desc: "厨下式 RO反渗透直出纯净水，包邮包安装",
-          price: "1999"
+          price: "1909"
         },
         {
           sourceUrl: "//www.mi.com/ihealth/ ",
           imgUrl: "http://i1.mifile.cn/a1/T17FCQByWv1RXrhCrK!220x220.jpg",
           title: "iHealth智能血压计（蓝牙版）",
           desc: "送给父母的健康礼物 测血压仅需1步",
-          price: "199"
+          price: "1959"
         },
         {
           sourceUrl: "//www.mi.com/dianfanbao/",
           imgUrl: "http://i1.mifile.cn/a1/T1OVC_ByY_1RXrhCrK!220x220.jpg",
           title: "米家压力IH电饭煲",
           desc: "智能烹饪，3L 容量",
-          price: "999"
+          price: "9949"
         },
         {
           sourceUrl: "//item.mi.com/1163200015.html",
           imgUrl: "http://i1.mifile.cn/a1/pms_1470730028.12443689!220x220.jpg",
           title: "全系智能套装限时款",
           desc: "开启你的智能生活",
-          price: "292",
+          price: "1292",
           oldPrice: "325",
           discountType: "discount",
           discount: "享九折"
@@ -105,21 +104,21 @@ export default {
           imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
           title: "小米手环 光感版",
           desc: "实时监测心率，科学运动",
-          price: "99"
+          price: "399"
         },
         {
           sourceUrl: "//list.mi.com/accessories/tag?id=guangganban",
           imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
           title: "小米手环 光感版",
           desc: "实时监测心率，科学运动",
-          price: "99"
+          price: "989"
         },
         {
           sourceUrl: "//list.mi.com/accessories/tag?id=guangganban",
           imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
           title: "小米手环 光感版",
           desc: "实时监测心率，科学运动",
-          price: "99"
+          price: "990"
         }
       ]
     };
@@ -132,6 +131,10 @@ export default {
     // 鼠标移入移除active类
     removeActive($event) {
       $event.currentTarget.className = "";
+    },
+    // 点击进入商品详情页
+    goGoodsInfo(id) {
+      this.$router.push({ name: "itgoodsinfo", params: { id } });
     }
   }
 };

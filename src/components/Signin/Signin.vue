@@ -22,7 +22,7 @@
         >
         <i class="fa fa-lock"></i>
       </p>
-      <a class="button is-primary is-medium">注册</a>
+      <a class="button is-primary is-medium" @click="signin()">注册</a>
       <div class="prompt-box">
         <span class="clickable" @click="goLogin()">已有账号登录</span>
       </div>
@@ -59,16 +59,79 @@ export default {
     }
   },
   methods: {
+    // 点击×关闭注册页面
     hideSignin() {
       // 下面的语句配合开头写的 .sync 就会更新父组件中的 visible_Signin 变量
       this.$emit("update:visible_Signin", false);
     },
+    // 点击切换到登录页面
     goLogin() {
       // 在注册里面点击登录后：
       // 1.调用 hideSignin() 方法关闭注册页，
       // 2.然后修改 headers父组件 中控制登录页的值，使其显示登录页
       this.hideSignin();
       this.$emit("update:visible_Login", true);
+    },
+    // 发送注册请求
+    signin() {
+      // 初始化leancloud
+      var AV = require("leancloud-storage");
+      var { Query, User } = AV;
+      // console.log(AV);
+      // this.$http
+      //   .get(
+      //     "https://vgrvflqm.api.lncld.net/1.1/classes/TestObject/5c3dfd0f44d904005d910cbc",
+      //     {
+      //       headers: {
+      //         "X-LC-Id": "VgrVFlqmXRWWMXrULu2O189j-gzGzoHsz",
+      //         "X-LC-Key": "2morl5mF5v3y3h5cbb6di6XV"
+      //       }
+      //     }
+      //   )
+      //   .then(function(response) {
+      //     console.log(response);
+      //   })
+      //   .catch(function(error) {
+      //     console.log(error);
+      //   });
+      this.$http
+        .post("https://vgrvflqm.api.lncld.net/1.1/login", {
+          headers: {
+            "X-LC-Id": "VgrVFlqmXRWWMXrULu2O189j-gzGzoHsz",
+            "X-LC-Key": "2morl5mF5v3y3h5cbb6di6XV",
+            "Content-Type": "application/json"
+          },
+          data: {
+            username: "admin",
+            password: "admin123"
+          }
+        })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+      // this.$http
+      //   .post("https://vgrvflqm.api.lncld.net/1.1/users", {
+      //     headers: {
+      //       "X-LC-Id": "VgrVFlqmXRWWMXrULu2O189j-gzGzoHsz",
+      //       "X-LC-Key": "2morl5mF5v3y3h5cbb6di6XV",
+      //       "Content-Type": "application/json"
+      //       // "Content-Type": "text/plain"
+      //     },
+      //     data: {
+      //       username: "hjiang",
+      //       password: "f32@ds*@&dsa",
+      //       phone: "18612340000"
+      //     }
+      //   })
+      //   .then(function(response) {
+      //     console.log(response);
+      //   })
+      //   .catch(function(error) {
+      //     console.log(error);
+      //   });
     }
   }
 };

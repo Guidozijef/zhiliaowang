@@ -95,15 +95,17 @@ export default {
       //     console.log(error);
       //   });
       this.$http
-        .post("https://vgrvflqm.api.lncld.net/1.1/login", {
+        .post("https://api.leancloud.cn/1.1/users", {
           headers: {
             "X-LC-Id": "VgrVFlqmXRWWMXrULu2O189j-gzGzoHsz",
             "X-LC-Key": "2morl5mF5v3y3h5cbb6di6XV",
             "Content-Type": "application/json"
+            // "Content-Type": "text/plain"
           },
           data: {
-            username: "admin",
-            password: "admin123"
+            username: "hjiang",
+            password: "f32@ds*@&dsa",
+            phone: "18612340000"
           }
         })
         .then(function(response) {
@@ -112,26 +114,6 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-      // this.$http
-      //   .post("https://vgrvflqm.api.lncld.net/1.1/users", {
-      //     headers: {
-      //       "X-LC-Id": "VgrVFlqmXRWWMXrULu2O189j-gzGzoHsz",
-      //       "X-LC-Key": "2morl5mF5v3y3h5cbb6di6XV",
-      //       "Content-Type": "application/json"
-      //       // "Content-Type": "text/plain"
-      //     },
-      //     data: {
-      //       username: "hjiang",
-      //       password: "f32@ds*@&dsa",
-      //       phone: "18612340000"
-      //     }
-      //   })
-      //   .then(function(response) {
-      //     console.log(response);
-      //   })
-      //   .catch(function(error) {
-      //     console.log(error);
-      //   });
     }
   }
 };

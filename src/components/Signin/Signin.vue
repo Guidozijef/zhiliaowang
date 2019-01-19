@@ -7,11 +7,11 @@
       </div>
       <p class="control has-icon">
         <input class="input is-medium" type="user" placeholder="请输入用户名" style="fontSize:14px">
-        <i class="fa fa-user"></i>
+        <i class="fas fa-user"></i>
       </p>
       <p class="control has-icon">
         <input class="input is-medium" type="phone" placeholder="请输入手机号" style="fontSize:14px">
-        <i class="fa fa-mobile-phone"></i>
+        <i class="fas fa-mobile-phone"></i>
       </p>
       <p class="control has-icon">
         <input
@@ -20,7 +20,7 @@
           placeholder="请输入密码（不少于6位数）"
           style="fontSize:14px"
         >
-        <i class="fa fa-lock"></i>
+        <i class="fas fa-lock"></i>
       </p>
       <a class="button is-primary is-medium" @click="signin()">注册</a>
       <div class="prompt-box">

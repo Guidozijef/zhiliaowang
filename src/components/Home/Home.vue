@@ -5,7 +5,7 @@
       <div class="navigation">
         <ul class="silde-list">
           <span class="icon is-small good-all">
-            <i class="fa fa-bars"></i>
+            <i class="fas fa-bars"></i>
             <router-link :to="'/List/' + '全部商品分类'">全部商品分类</router-link>
           </span>
           <li v-for="(info, index) in GPSList" :key="info.index">

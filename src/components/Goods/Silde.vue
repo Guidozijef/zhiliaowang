@@ -7,7 +7,7 @@
           @mouseenter="tagle1 = !tagle1"
           @mouseleave="tagle1 = !tagle1"
         >
-          <i class="fa fa-bars"></i>
+          <i class="fas fa-bars"></i>
           <router-link :to="'/List/' + '全部商品分类'">全部商品分类</router-link>
           <div class="all-list" v-show="tagle1">
             <ul @mouseleave="tagle2 = !tagle2">

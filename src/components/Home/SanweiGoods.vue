@@ -24,7 +24,7 @@
             <span class="price">{{sub.price}}</span>
             <div class="people-mub">
               <span class="icon is-small">
-                <i class="fa fa-heart"></i>
+                <i class="fas fa-heart"></i>
               </span>
               20 人购买
             </div>

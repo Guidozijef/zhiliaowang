@@ -12,11 +12,11 @@
           placeholder="请输入手机号或邮箱"
           style="fontSize:14px"
         >
-        <i class="fa fa-user"></i>
+        <i class="fas fa-user"></i>
       </p>
       <p class="control has-icon">
         <input class="input is-medium" type="passworld" placeholder="请输入密码" style="fontSize:14px">
-        <i class="fa fa-lock"></i>
+        <i class="fas fa-lock"></i>
       </p>
       <a class="button is-primary is-medium">登录</a>
       <div class="prompt-box">

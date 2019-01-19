@@ -23,7 +23,7 @@
         <tooltip content="收藏" placement="left">
           <button class="button">
             <span class="icon is-medium">
-              <i class="fa el-icon-star-off"></i>
+              <i class="fas el-icon-star-off"></i>
             </span>
           </button>
         </tooltip>
@@ -32,7 +32,7 @@
         <tooltip content="购物车" placement="left">
           <button class="button">
             <span class="icon is-medium">
-              <i class="fa fa-cart-plus"></i>
+              <i class="fas fa-cart-plus"></i>
             </span>
           </button>
         </tooltip>

@@ -95,7 +95,7 @@ export default {
       //     console.log(error);
       //   });
       this.$http
-        .post("https://api.leancloud.cn/1.1/users", {
+        .post("https://vgrvflqm.api.lncld.net/1.1/users", {
           headers: {
             "X-LC-Id": "VgrVFlqmXRWWMXrULu2O189j-gzGzoHsz",
             "X-LC-Key": "2morl5mF5v3y3h5cbb6di6XV",

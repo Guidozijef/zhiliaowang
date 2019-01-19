@@ -6,21 +6,72 @@
         <span class="exit" @click="hideSignin()">×</span>
       </div>
       <p class="control has-icon">
-        <input class="input is-medium" type="user" placeholder="请输入用户名" style="fontSize:14px">
-        <i class="fas fa-user"></i>
+        <input
+          class="input is-medium"
+          type="user"
+          v-model="username"
+          v-m
+          placeholder="请输入用户名"
+          style="fontSize:14px"
+        >
+        <i
+          class="fas fa-user"
+          style="font-size: 14px;
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          width: 24px;
+          color: #dbdbdb;
+          position: absolute;
+          top: 8px;
+          z-index: 4;
+          left: 8px;"
+        ></i>
       </p>
       <p class="control has-icon">
-        <input class="input is-medium" type="phone" placeholder="请输入手机号" style="fontSize:14px">
-        <i class="fas fa-mobile-phone"></i>
+        <input
+          class="input is-medium"
+          type="phone"
+          v-model="phone_email"
+          placeholder="请输入手机号或者邮箱"
+          style="fontSize:14px"
+        >
+        <i
+          class="fas fa-mobile-phone"
+          style="font-size: 14px;
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          width: 24px;
+          color: #dbdbdb;
+          position: absolute;
+          top: 8px;
+          z-index: 4;
+          left: 8px;"
+        ></i>
       </p>
       <p class="control has-icon">
         <input
           class="input is-medium"
           type="passworld"
+          v-model="password"
+          @keyup.enter="signin()"
           placeholder="请输入密码（不少于6位数）"
           style="fontSize:14px"
         >
-        <i class="fas fa-lock"></i>
+        <i
+          class="fas fa-lock"
+          style="font-size: 14px;
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          width: 24px;
+          color: #dbdbdb;
+          position: absolute;
+          top: 8px;
+          z-index: 4;
+          left: 8px;"
+        ></i>
       </p>
       <a class="button is-primary is-medium" @click="signin()">注册</a>
       <div class="prompt-box">
@@ -51,7 +102,11 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      username: "",
+      password: "",
+      phone_email: ""
+    };
   },
   props: {
     visible_Signin: {
@@ -75,45 +130,30 @@ export default {
     // 发送注册请求
     signin() {
       // 初始化leancloud
-      var AV = require("leancloud-storage");
-      var { Query, User } = AV;
+      // var AV = require("leancloud-storage");
+      // var { Query, User } = AV;
       // console.log(AV);
-      // this.$http
-      //   .get(
-      //     "https://vgrvflqm.api.lncld.net/1.1/classes/TestObject/5c3dfd0f44d904005d910cbc",
-      //     {
-      //       headers: {
-      //         "X-LC-Id": "VgrVFlqmXRWWMXrULu2O189j-gzGzoHsz",
-      //         "X-LC-Key": "2morl5mF5v3y3h5cbb6di6XV"
-      //       }
-      //     }
-      //   )
-      //   .then(function(response) {
-      //     console.log(response);
-      //   })
-      //   .catch(function(error) {
-      //     console.log(error);
-      //   });
-      this.$http
-        .post("https://vgrvflqm.api.lncld.net/1.1/users", {
-          headers: {
-            "X-LC-Id": "VgrVFlqmXRWWMXrULu2O189j-gzGzoHsz",
-            "X-LC-Key": "2morl5mF5v3y3h5cbb6di6XV",
-            "Content-Type": "application/json"
-            // "Content-Type": "text/plain"
-          },
-          data: {
-            username: "hjiang",
-            password: "f32@ds*@&dsa",
-            phone: "18612340000"
-          }
-        })
-        .then(function(response) {
-          console.log(response);
-        })
-        .catch(function(error) {
-          console.log(error);
+      // 判断如果包含 @ 符号，字段就为邮箱，否则就为手机号
+      if (this.phone_email.includes("@")) {
+        let data = {
+          username: this.username,
+          password: this.password,
+          email: this.phone_email
+        };
+      } else {
+        let data = {
+          username: this.username,
+          password: this.password,
+          phone: this.phone_email
+        };
+      }
+      this.$axios
+        .http({ type: "post", url: "/users", data: data })
+        .then(res => {
+          console.log(res);
         });
+      // 点注册按钮后关闭注册组件
+      this.hideSignin();
     }
   }
 };

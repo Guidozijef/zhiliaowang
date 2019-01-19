@@ -9,16 +9,48 @@
         <input
           class="input is-medium"
           type="phone/email"
+          v-model="username"
           placeholder="请输入手机号或邮箱"
           style="fontSize:14px"
         >
-        <i class="fas fa-user"></i>
+        <i
+          class="fas fa-user"
+          style="font-size: 14px;
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          width: 24px;
+          color: #dbdbdb;
+          position: absolute;
+          top: 8px;
+          z-index: 4;
+          left: 8px;"
+        ></i>
       </p>
       <p class="control has-icon">
-        <input class="input is-medium" type="passworld" placeholder="请输入密码" style="fontSize:14px">
-        <i class="fas fa-lock"></i>
+        <input
+          class="input is-medium"
+          type="passworld"
+          v-model="password"
+          placeholder="请输入密码"
+          @keyup.enter="login()"
+          style="fontSize:14px"
+        >
+        <i
+          class="fas fa-lock"
+          style="font-size: 14px;
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          width: 24px;
+          color: #dbdbdb;
+          position: absolute;
+          top: 8px;
+          z-index: 4;
+          left: 8px;"
+        ></i>
       </p>
-      <a class="button is-primary is-medium">登录</a>
+      <a class="button is-primary is-medium" @click="login()">登录</a>
       <div class="prompt-box">
         没有账号？
         <span class="clickable" @click="goSignin()">注册</span>
@@ -49,7 +81,10 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      username: "",
+      password: ""
+    };
   },
   props: {
     visible_Login: {
@@ -70,6 +105,26 @@ export default {
       // 2.然后修改 headers父组件 中控制注册页的值，使其显示注册页
       this.hideLogin();
       this.$emit("update:visible_Signin", true);
+    },
+    // 点击登录
+    login() {
+      var data = {
+        username: this.username,
+        password: this.password
+      };
+      this.$axios
+        .http({ type: "post", url: "/login", data: data })
+        .then(res => {
+          if (res.status == 200) {
+            console.log("登录成功");
+          } else if (res.code == 210) {
+            console.log("密码错误");
+          }
+          console.log(res);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   }
 };

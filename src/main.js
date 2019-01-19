@@ -7,8 +7,8 @@ import router from './router';
 Vue.config.productionTip = false;
 
 // 导入axios
-import axios from 'axios';
-Vue.prototype.$http = axios;
+import axios from './request.js'; // 全局添加请求函数配置
+Vue.prototype.$axios = axios;
 
 // 导入Vue-Blu组件
 import VueBlu from 'vue-blu';

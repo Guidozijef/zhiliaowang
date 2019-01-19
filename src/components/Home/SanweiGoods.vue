@@ -170,6 +170,9 @@ export default {
       }
     }
     .top-sub {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
       // 动画类
       .active {
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -179,7 +182,7 @@ export default {
       li {
         float: left;
         margin: 0 10px 20px 10px;
-        width: 18.4%;
+        width: 18.2%;
         height: 300px;
         background-color: #fff;
         transition: all 0.2s linear;

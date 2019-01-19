@@ -61,7 +61,7 @@
           <div class="switch">
             <div class="left">
               <span class="icon is-large">
-                <i class="fa fa-angle-double-left"></i>
+                <i class="fas fa-angle-double-left"></i>
               </span>
               <a herf>智能血压计（蓝牙版）</a>
             </div>
@@ -69,7 +69,7 @@
               <a herf>米家压力IH电饭煲</a>
               
               <span class="icon is-large">
-                <i class="fa fa-angle-double-right"></i>
+                <i class="fas fa-angle-double-right"></i>
               </span>
             </div>
           </div>
@@ -108,7 +108,7 @@
             <li class="list-group-item">
               <p class="list-group-item-text">
                 <span class="icon is-medium">
-                  <i class="fa fa-link"></i>
+                  <i class="fas fa-link"></i>
                 </span>
                 <a
                   href="http://pan.baidu.com/s/1o8FPqf4"
@@ -118,7 +118,7 @@
               </p>
               <p class="list-group-item-text">
                 <span class="icon is-medium">
-                  <i class="fa fa-key"></i>
+                  <i class="fas fa-key"></i>
                 </span>
                 <code>密码：n972</code>
               </p>
@@ -135,7 +135,7 @@
                 <p>
                   前端 |
                   <span data-v-de3a336a class="icon is-small">
-                    <i data-v-de3a336a class="fa fa-heart"></i>
+                    <i data-v-de3a336a class="fas fa-heart"></i>
                   </span>20人购买
                 </p>
               </div>
@@ -146,7 +146,7 @@
                 <p>
                   前端 |
                   <span data-v-de3a336a class="icon is-small">
-                    <i data-v-de3a336a class="fa fa-heart"></i>
+                    <i data-v-de3a336a class="fas fa-heart"></i>
                   </span>20人购买
                 </p>
               </div>
@@ -157,7 +157,7 @@
                 <p>
                   前端 |
                   <span data-v-de3a336a class="icon is-small">
-                    <i data-v-de3a336a class="fa fa-heart"></i>
+                    <i data-v-de3a336a class="fas fa-heart"></i>
                   </span>20人购买
                 </p>
               </div>
@@ -168,7 +168,7 @@
                 <p>
                   前端 |
                   <span data-v-de3a336a class="icon is-small">
-                    <i data-v-de3a336a class="fa fa-heart"></i>
+                    <i data-v-de3a336a class="fas fa-heart"></i>
                   </span>20人购买
                 </p>
               </div>

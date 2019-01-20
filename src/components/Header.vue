@@ -8,7 +8,9 @@
       <ul class="menu-box">
         <li class="menu-item">
           <!-- <router-link :to="'/login/'">登录</router-link> -->
-          <a @click="showLogin()">登录</a>
+          <a @click="showLogin()" v-show="loginText">登录</a>
+          <a v-show="!loginText">{{user}}</a>
+          <a v-show="!loginText" @click="loginText = !loginText">，退出登录</a>
           <span>|</span>
           <a @click="showSignin()">注册</a>
           <span>|</span>
@@ -49,7 +51,11 @@
       </p>
     </div>
     <!-- 登录里面需要点击注册，注册里面要登录，所以要传两个参数 -->
-    <login :visible_Login.sync="visible_Login" :visible_Signin.sync="visible_Signin"></login>
+    <login
+      :visible_Login.sync="visible_Login"
+      :visible_Signin.sync="visible_Signin"
+      @receive-user="changeUser"
+    ></login>
     <signin :visible_Signin.sync="visible_Signin" :visible_Login.sync="visible_Login"></signin>
   </div>
 </template>
@@ -59,6 +65,8 @@ import signin from "./Signin/Signin";
 export default {
   data() {
     return {
+      user: "",
+      loginText: true,
       label: "",
       message: true,
       visible_Login: false,
@@ -81,6 +89,11 @@ export default {
         this.$router.push({ name: "search", params: { id } });
       }
       this.label = "";
+    },
+    changeUser(username, loginText) {
+      // alert("我被触发了");
+      this.user = username;
+      this.loginText = loginText;
     }
   }
 };

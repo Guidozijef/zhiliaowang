@@ -116,15 +116,32 @@ export default {
         .http({ type: "post", url: "/login", data: data })
         .then(res => {
           if (res.status == 200) {
+            console.log(res.status);
+            this.$emit("receive-user", res.data.username, false);
+            this.$message({
+              message: "恭喜你，已经成功登录",
+              type: "success"
+            });
             console.log("登录成功");
-          } else if (res.code == 210) {
-            console.log("密码错误");
+            console.log(res.data.username);
           }
-          console.log(res);
         })
         .catch(function(error) {
-          console.log(error);
+          if (error.response) {
+            // 请求已发出，但服务器响应的状态码不在 2xx 范围内
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            console.log("Error", error.message);
+          }
+          console.log(error.config);
         });
+
+      this.username = "";
+      this.password = "";
+      this.hideLogin();
     }
   }
 };

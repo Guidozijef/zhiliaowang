@@ -16,10 +16,12 @@ import 'vue-blu/dist/css/vue-blu.min.css';
 Vue.use(VueBlu);
 
 // 导入element组件
-import { Carousel, CarouselItem, Icon } from 'element-ui';
+import { Carousel, CarouselItem, Icon, Message } from 'element-ui';
 Vue.component(Carousel.name, Carousel);
 Vue.component(CarouselItem.name, CarouselItem);
 Vue.component(Icon.name, Icon);
+Vue.component(Message.name, Message);
+Vue.prototype.$message = Message;
 
 import './assets/defind.scss'; // 自定义去掉body的margin
 

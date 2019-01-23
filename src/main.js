@@ -6,7 +6,7 @@ import router from './router';
 
 Vue.config.productionTip = false;
 
-// 导入axios
+// 导入封装后的axios
 import axios from './request.js'; // 全局添加请求函数配置
 Vue.prototype.$axios = axios;
 

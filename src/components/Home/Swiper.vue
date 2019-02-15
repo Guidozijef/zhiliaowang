@@ -31,18 +31,18 @@ export default {
   margin: 0 auto;
   .swiper-box {
     .el-carousel__item h3 {
-      color: hotpink;
+      // color: hotpink;
       font-size: 18px;
       opacity: 0.75;
       line-height: 500px;
       margin: 0;
     }
-    .el-carousel__item:nth-child(2n) {
-      background-color: red;
-    }
-    .el-carousel__item:nth-child(2n + 1) {
-      background-color: darkblue;
-    }
+    // .el-carousel__item:nth-child(2n) {
+    //   background-color: red;
+    // }
+    // .el-carousel__item:nth-child(2n + 1) {
+    //   background-color: darkblue;
+    // }
   }
 }
 </style>

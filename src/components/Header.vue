@@ -146,13 +146,13 @@ export default {
     margin: 30px 300px 30px 0px;
     select {
       font-size: 13px;
-      font-family: Mricosoft Yahei;
+      font-family: "Mricosoft Yahei";
       padding-right: 30px;
     }
     input,
     .button {
       font-size: 16px;
-      font-family: Mricosoft Yahei;
+      font-family: "Mricosoft Yahei";
     }
   }
 }

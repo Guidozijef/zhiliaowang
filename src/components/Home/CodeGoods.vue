@@ -128,7 +128,7 @@ export default {
     changeActive($event) {
       $event.currentTarget.className = "active";
     },
-    // 鼠标移入移除active类
+    // 鼠标移出移除active类
     removeActive($event) {
       $event.currentTarget.className = "";
     },

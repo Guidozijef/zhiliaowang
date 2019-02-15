@@ -77,11 +77,18 @@ export default {
         { info: "python" },
         { info: "java" },
         { info: "C" },
+        { info: "C++" },
         { info: "PHP" }
       ],
       sanwei: [{ info: "杰魔" }, { info: "UG造型" }, { info: "DX" }],
-      code: [{ info: "PHP" }, { info: "ASD" }, { info: "DX" }],
-      twoD: [{ info: "PS" }, { info: "AI" }, { info: "DX" }]
+      code: [
+        { info: "PHP" },
+        { info: "C" },
+        { info: "ASD" },
+        { info: "Python" },
+        { info: "Java" }
+      ],
+      twoD: [{ info: "PS" }, { info: "AI" }]
     };
   },
   components: {

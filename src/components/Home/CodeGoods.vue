@@ -8,16 +8,16 @@
       <ul class="top-sub">
         <li
           v-for="(sub,index) in subs"
-          :key="sub.index"
+          :key="index"
           @mouseover="changeActive($event)"
           @mouseout="removeActive($event)"
           @click="goGoodsInfo(sub.title)"
         >
           <div class="goods-img">
-            <img :src="sub.imgUrl" alt width="200px" height="200px">
+            <img :src="sub.imgUrl" alt>
           </div>
           <h3 class="goods-title">
-            <a herf="#">{{sub.title}}</a>
+            <a herf="#" :title="sub.title">{{sub.title}}</a>
           </h3>
           <div class="goods-price">
             <span class="price-sign">￥</span>
@@ -43,8 +43,9 @@ export default {
       subs: [
         {
           sourceUrl: "//item.mi.com/1161200059.html",
-          imgUrl: "http://i3.mifile.cn/a4/T1rQAgB7Av1RXrhCrK.jpg",
-          title: "小米路由器3",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201711/14/1440125a0a8fcc74f98jlyfRb.png",
+          title: "周公解梦网页源码",
           desc: "四天线设计，更安全更稳定",
           price: "159",
           discountType: "free",
@@ -52,8 +53,9 @@ export default {
         },
         {
           sourceUrl: "//www.mi.com/mibicycle/",
-          imgUrl: "http://i3.mifile.cn/a4/2b69b930-a2fd-4d09-a46a-8690cb79f764",
-          title: "电助力折叠自行车",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201710/10/13180659dc580e8f705gxFlTJ.jpg",
+          title: "专业站长平台系统源码",
           desc: "力矩传感电助力，让城市出行轻松有趣",
           price: "149",
           discountType: "new",
@@ -61,8 +63,9 @@ export default {
         },
         {
           sourceUrl: "//www.mi.com/mitu/",
-          imgUrl: "http://i1.mifile.cn/a1/pms_1464615180.86261317!220x220.jpg",
-          title: "米兔智能故事机",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201711/14/1525295a0a9a69c1636jUWxdO.jpg",
+          title: "92GAME飞翔商城模板",
           desc: "能说会道，宝宝的好玩伴",
           price: "199",
           discountType: "new",
@@ -70,29 +73,33 @@ export default {
         },
         {
           sourceUrl: "//www.mi.com/water2/",
-          imgUrl: "//i3.mifile.cn/a4/T1zTK_Bbhv1RXrhCrK.jpg",
-          title: "小米净水器",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201808/27/1554245b83ae302fbf1U6NHhl_thumb.jpg",
+          title: "PHP米酷影院网站源码(MKCMS4.4.3完整版) 自动采集",
           desc: "厨下式 RO反渗透直出纯净水，包邮包安装",
           price: "199"
         },
         {
           sourceUrl: "//www.mi.com/ihealth/ ",
-          imgUrl: "http://i1.mifile.cn/a1/T17FCQByWv1RXrhCrK!220x220.jpg",
-          title: "iHealth智能血压计（蓝牙版）",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201801/17/1554575a5f01518d3550wmAUq_thumb.png",
+          title: "微赞体重预测平台系统源码",
           desc: "送给父母的健康礼物 测血压仅需1步",
           price: "199"
         },
         {
           sourceUrl: "//www.mi.com/dianfanbao/",
-          imgUrl: "http://i1.mifile.cn/a1/T1OVC_ByY_1RXrhCrK!220x220.jpg",
-          title: "米家压力IH电饭煲",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201801/17/1604045a5f0374ef02fUzNI6d_thumb.jpg",
+          title: "laravel内核带采集小程序商店，小程序",
           desc: "智能烹饪，3L 容量",
           price: "99"
         },
         {
           sourceUrl: "//item.mi.com/1163200015.html",
-          imgUrl: "http://i1.mifile.cn/a1/pms_1470730028.12443689!220x220.jpg",
-          title: "全系智能套装限时款",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201806/03/1615465b13a3b28c805zWD7zs_thumb.jpg",
+          title: "数字交易系统源码交易商城多商户新版源码交易商城含网站",
           desc: "开启你的智能生活",
           price: "292",
           oldPrice: "325",
@@ -101,22 +108,25 @@ export default {
         },
         {
           sourceUrl: "//list.mi.com/accessories/tag?id=guangganban",
-          imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
-          title: "小米手环 光感版",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201708/18/1626115996a4a310cb1P2YCXC.png",
+          title: "Laravel内核开发淘宝客系统淘宝客优惠券源码全站",
           desc: "实时监测心率，科学运动",
           price: "499"
         },
         {
           sourceUrl: "//list.mi.com/accessories/tag?id=guangganban",
-          imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
-          title: "小米手环 光感版",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201810/26/1739175bd2e0c5183cfL4WcnW_thumb.gif",
+          title: "微擎微赞仿拼多多拼团小程序拼团商城2.07商业版,拼多多一",
           desc: "实时监测心率，科学运动",
           price: "99"
         },
         {
           sourceUrl: "//list.mi.com/accessories/tag?id=guangganban",
-          imgUrl: "http://i1.mifile.cn/a1/T1HcAQBgDT1RXrhCrK!220x220.jpg",
-          title: "小米手环 光感版",
+          imgUrl:
+            "http://zhicoo.cn/upload/products/201810/26/1736595bd2e03b8efa93TZ83k_thumb.gif",
+          title: "志汇超级外卖餐饮小程序 V5.8.0 后台模块+前端小程序",
           desc: "实时监测心率，科学运动",
           price: "99"
         }
@@ -143,11 +153,12 @@ export default {
 <style lang="scss" scoped>
 .goods-container {
   background-color: #f5f5f5;
-  height: 740px;
+  height: 650px;
   margin-bottom: 20px;
   .IT-container {
     padding-top: 10px;
-    width: 93%;
+    // width: 93%;
+    width: 1255px;
     margin: 0 auto;
     .top-title {
       display: inline;
@@ -158,7 +169,7 @@ export default {
       color: #333;
       padding-left: 5px;
       padding-top: 5px;
-      border-left: 5px solid #ff0080;
+      border-left: 5px solid rebeccapurple;
     }
     .more {
       float: right;
@@ -170,10 +181,10 @@ export default {
       }
     }
     .top-sub {
+      // 动画类
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      // 动画类
       .active {
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         // transform: translate3d(0, -3px, 0);
@@ -182,20 +193,31 @@ export default {
       li {
         float: left;
         margin: 0 10px 20px 10px;
-        width: 18.2%;
-        height: 300px;
+        // width: 18.2%;
+        width: 230px;
+        height: 250px;
         background-color: #fff;
         transition: all 0.2s linear;
         .goods-img {
-          width: 200px;
-          height: 200px;
+          width: 230px;
           margin: 0 auto 20px;
+          text-align: center;
+          height: 152px;
+          overflow: hidden;
         }
         .goods-title {
           font-size: 16px;
           text-align: center;
+          width: 230px;
           a {
             color: #333;
+            display: inline-block;
+            padding: 0 10px;
+            width: 230px;
+            height: auto;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
           }
         }
         .goods-price {

@@ -10,7 +10,6 @@
           class="input is-medium"
           type="user"
           v-model="username"
-          v-m
           placeholder="请输入用户名"
           style="fontSize:14px"
         >

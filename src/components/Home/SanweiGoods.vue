@@ -14,10 +14,10 @@
           @click="goGoodsInfo(sub.title)"
         >
           <div class="goods-img">
-            <img :src="sub.imgUrl" alt width="200px" height="200px">
+            <img :src="sub.imgUrl" alt>
           </div>
           <h3 class="goods-title">
-            <a herf="#">{{sub.title}}</a>
+            <a herf="#" :title="sub.title">{{sub.title}}</a>
           </h3>
           <div class="goods-price">
             <span class="price-sign">￥</span>
@@ -143,11 +143,12 @@ export default {
 <style lang="scss" scoped>
 .goods-container {
   background-color: #f5f5f5;
-  height: 740px;
-  // margin-bottom: 20px;
+  height: 650px;
+  margin-bottom: 20px;
   .IT-container {
     padding-top: 10px;
-    width: 93%;
+    // width: 93%;
+    width: 1255px;
     margin: 0 auto;
     .top-title {
       display: inline;
@@ -158,7 +159,7 @@ export default {
       color: #333;
       padding-left: 5px;
       padding-top: 5px;
-      border-left: 5px solid rgb(173, 233, 34);
+      border-left: 5px solid rebeccapurple;
     }
     .more {
       float: right;
@@ -170,10 +171,10 @@ export default {
       }
     }
     .top-sub {
+      // 动画类
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      // 动画类
       .active {
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         // transform: translate3d(0, -3px, 0);
@@ -182,20 +183,31 @@ export default {
       li {
         float: left;
         margin: 0 10px 20px 10px;
-        width: 18.2%;
-        height: 300px;
+        // width: 18.2%;
+        width: 230px;
+        height: 250px;
         background-color: #fff;
         transition: all 0.2s linear;
         .goods-img {
-          width: 200px;
-          height: 200px;
+          width: 230px;
           margin: 0 auto 20px;
+          text-align: center;
+          height: 152px;
+          overflow: hidden;
         }
         .goods-title {
           font-size: 16px;
           text-align: center;
+          width: 230px;
           a {
             color: #333;
+            display: inline-block;
+            padding: 0 10px;
+            width: 230px;
+            height: auto;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
           }
         }
         .goods-price {

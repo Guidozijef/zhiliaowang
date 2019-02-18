@@ -30,7 +30,7 @@
           </div>
         </span>
         <ul class="silde-list">
-          <li v-for="(info, index) in GPSList" :key="info.index">
+          <li v-for="(info, index) in GPSList" :key="index">
             <router-link :to="'/List/' + info.title">{{info.title}}</router-link>
           </li>
         </ul>

@@ -3,8 +3,8 @@
     <div class="goods-item">
       <ul class="top-sub">
         <li
-          v-for="sub in subs"
-          :key="sub.price"
+          v-for="(sub, index) in subs"
+          :key="index"
           @mouseover="changeActive($event)"
           @mouseout="removeActive($event)"
           @click="goGoodsInfo(sub.title)"

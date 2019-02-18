@@ -5,7 +5,7 @@
       <breadcrumb>你的位置：
         <breadcrumb-item label="首页" to="#/home"></breadcrumb-item>
         <breadcrumb-item label="互联网" to="#/components"></breadcrumb-item>
-        <breadcrumb-item label="商品" to="#/components/breadcrumb"></breadcrumb-item>
+        <breadcrumb-item :label="title" to="#/components/breadcrumb"></breadcrumb-item>
       </breadcrumb>
     </div>
     <div class="page-container columns">
